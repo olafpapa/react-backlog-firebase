@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "***REMOVED***",
   authDomain: "react-todo-firebase-8556e.firebaseapp.com",
   databaseURL: "https://react-todo-firebase-8556e.firebaseio.com",
