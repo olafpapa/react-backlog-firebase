@@ -37,7 +37,7 @@ service cloud.firestore {
 }
 ```
 - プロジェクトの設定 ＞ Firebase SDK snippetから構成情報をコピーして`config/firebase.js`の`export const firebaseConfig`を上書きする
-<img width="620" alt="firebaseConfig" src="https://user-images.githubusercontent.com/50685640/60187689-f2db7480-9868-11e9-9dfa-1f3ef68cdbb5.png">
+<img width="620" alt="firebaseConfig" src="https://user-images.githubusercontent.com/50685640/60190688-0b9a5900-986e-11e9-88af-bab539a18bdc.png">
 
 ## 実行
 ```
