@@ -1,6 +1,5 @@
 
 ## 概要
-Scrumで使うバックログ管理アプリ（のような何か）
 
 ### フロントエンド
 - [React](https://github.com/facebook/react)
@@ -29,7 +28,7 @@ service cloud.firestore {
       allow read, write: if request.auth.uid != null
     }
     match /users/{userId} {
-    	allow create
+      allow create
       allow read: if request.auth.uid != null
       allow write: if request.auth.uid == userId
     }
