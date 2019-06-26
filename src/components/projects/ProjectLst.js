@@ -8,7 +8,11 @@ export const ProjectLst = ({ projects }) => {
 
       {
         projects && projects.map(project => {
-          return <Link to={`/project/${project.id}`} key={ project.id }><ProjectSummary project={ project }/></Link>
+          return (
+            <Link to={ `/project/${ project.id }` } key={ project.id }>
+              <ProjectSummary project={ project }/>
+            </Link>
+          )
         })
       }
 

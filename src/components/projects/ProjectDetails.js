@@ -3,28 +3,32 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { ClipLoader } from 'react-spinners'
+import { Redirect } from 'react-router-dom'
+import moment from 'moment'
 
 export const ProjectDetails = (props) => {
-  const { project } = props
+  const { project, auth } = props
+  // ログインしていない場合はログイン画面にリダイレクトする
+  if (!auth.uid) return <Redirect to="/signin"/>
+
   if (project) {
     return (
       <div className="container section project-details">
         <div className="card z-depth-0">
           <div className="card-content">
-          <span className="card-title">
-            { project.title }
-          </span>
+            <span className="card-title">{ project.title }</span>
             <p>{ project.content }</p>
           </div>
           <div className="card-action gray lighten-4 gray-text">
             <div>Posted by { project.authorFirstName } { project.authorLastName }</div>
-            <div></div>
+            <p className="grey-text">{ moment(project.createdAt.toDate()).calendar() }</p>
           </div>
         </div>
       </div>
     );
   }
   return (
+
     <div className="container center">
       <ClipLoader
         sizeUnit={ "px" }
@@ -43,7 +47,8 @@ const mapStateToProps = (state, ownProps) => {
   const projects = state.firestore.data.projects
   const project = projects ? projects[id] : null
   return {
-    project: project
+    project: project,
+    auth: state.firebase.auth
   }
 
 
