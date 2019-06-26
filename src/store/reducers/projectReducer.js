@@ -1,7 +1,7 @@
 const initState = {
   projects: [
-    {id: 1, title: 'title1', content: 'hogehogehoge'},
-    {id: 2, title: 'title2', content: 'hogehogehoge'},
+    { id: 1, title: 'title1', content: 'hogehogehoge' },
+    { id: 2, title: 'title2', content: 'hogehogehoge' },
 
   ]
 }

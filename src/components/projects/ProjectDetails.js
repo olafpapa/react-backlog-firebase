@@ -1,24 +1,58 @@
 import * as React from 'react';
-
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
+import { ClipLoader } from 'react-spinners'
 
 export const ProjectDetails = (props) => {
-  const id = props.match.params.id
-  return (
-    <div className="container section project-details">
-      <div className="card z-depth-0">
-        <div className="card-content">
+  const { project } = props
+  if (project) {
+    return (
+      <div className="container section project-details">
+        <div className="card z-depth-0">
+          <div className="card-content">
           <span className="card-title">
-            Project title - { id }
+            { project.title }
           </span>
-          <p>hoge hoge hoge</p>
-        </div>
-        <div className="card-action gray lighten-4 gray-text">
-          <div>Posted by Ninja</div>
-          <div>2nd sep 2am</div>
+            <p>{ project.content }</p>
+          </div>
+          <div className="card-action gray lighten-4 gray-text">
+            <div>Posted by { project.authorFirstName } { project.authorLastName }</div>
+            <div></div>
+          </div>
         </div>
       </div>
+    );
+  }
+  return (
+    <div className="container center">
+      <ClipLoader
+        sizeUnit={ "px" }
+        size={ 50 }
+        color={ '#4846bc' }
+        loading={ !project }
+      />
     </div>
-  );
+  )
+
 };
 
-export default ProjectDetails
+const mapStateToProps = (state, ownProps) => {
+  console.log(state)
+  const id = ownProps.match.params.id
+  const projects = state.firestore.data.projects
+  const project = projects ? projects[id] : null
+  return {
+    project: project
+  }
+
+
+}
+
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'projects' }
+  ])
+)(ProjectDetails)
