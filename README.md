@@ -14,6 +14,10 @@
 - Cloud Functions
 - Hosting（デプロイ先として使う）
 
+### テスト
+- [Jest](https://jestjs.io/ja/)
+- [Enzyme](https://airbnb.io/enzyme/)
+
 ## 環境
 - Node v10.16.0
 - create-react-app
@@ -89,4 +93,9 @@ npm run build
 ### デプロイ
 ```
 npm run deploy
+```
+
+### テスト
+```
+npm test
 ```
