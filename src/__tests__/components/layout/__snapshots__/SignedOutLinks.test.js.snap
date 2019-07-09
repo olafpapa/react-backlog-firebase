@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignedOutLinks /> <SignedOutLinks />のスナップショット 1`] = `
+<ul
+  className="right"
+>
+  <li>
+    <a
+      aria-current={null}
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
+  </li>
+  <li>
+    <a
+      aria-current={null}
+      href="/signin"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+  </li>
+</ul>
+`;
