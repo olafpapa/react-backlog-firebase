@@ -13,10 +13,10 @@ export const Notifications = (props) => {
               notifications && notifications.map(notification => {
                 return (
                   <li key={ notification.id }>
-                    <span className="pink-text">{ notification.user } </span>
-                    <span>{ notification.content }</span>
+                    <span data-test="user" className="pink-text">{ notification.user }</span>
+                    <span data-test="content">{ notification.content }</span>
                     <div className="grey-text note-date">
-                      { moment(notification.time.toDate()).fromNow() }
+                      { notification.time && moment(notification.time.toDate()).fromNow() }
                     </div>
                   </li>
                 )
