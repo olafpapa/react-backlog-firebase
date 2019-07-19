@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { signUp } from '../../store/actions/authActions'
 
-class SignUp extends Component {
+export class SignUp extends Component {
   state = {
     email: '',
     password: '',
@@ -23,11 +23,11 @@ class SignUp extends Component {
   render() {
     const { auth, authError } = this.props
     // ログインしているときはルートにリダイレクトする
-    if (auth.uid) return <Redirect to="/"/>
+    if (auth && auth.uid) return <Redirect to="/"/>
 
     return (
       <div className="container">
-        <form onSubmit={ this.handleSubmit } className="white">
+        <form id="signUpForm" onSubmit={ this.handleSubmit } className="white">
           <h5 className="grey-text text-darken-3">Sign Up</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
