@@ -1,6 +1,9 @@
 const initState = { projects: [] }
 
 const projectReducer = (state = initState, action) => {
+  if (!action) {
+    return state
+  }
   switch (action.type) {
     case 'CREATE_PROJECT':
       return state;
