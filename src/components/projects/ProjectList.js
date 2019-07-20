@@ -2,7 +2,7 @@ import * as React from 'react';
 import ProjectSummary from './ProjectSummary'
 import { Link } from 'react-router-dom'
 
-export const ProjectLst = ({ projects }) => {
+export const ProjectList = ({ projects }) => {
   return (
     <div className="project-list section">
 
@@ -20,4 +20,4 @@ export const ProjectLst = ({ projects }) => {
   );
 };
 
-export default ProjectLst
+export default ProjectList
