@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
 
-class CreateProject extends Component {
+export class CreateProject extends Component {
   state = {
     title: '',
     content: '',
@@ -22,11 +22,11 @@ class CreateProject extends Component {
   render() {
     const { auth } = this.props
     // ログインしていない場合はログイン画面にリダイレクトする
-    if (!auth.uid) return <Redirect to="/signin"/>
+    if (auth && !auth.uid) return <Redirect to="/signin"/>
 
     return (
       <div className="container">
-        <form onSubmit={ this.handleSubmit } className="white">
+        <form id="createProjectForm" onSubmit={ this.handleSubmit } className="white">
           <h5 className="grey-text text-darken-3">Create New Project</h5>
           <div className="input-field">
             <label htmlFor="title">Title</label>
