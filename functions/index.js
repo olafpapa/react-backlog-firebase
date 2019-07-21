@@ -21,7 +21,7 @@ exports.projectCreated = functions.region('asia-northeast1').firestore
     const project = doc.data();
     const notification = {
       content: 'が新規プロジェクトを追加しました!',
-      user: `${ project.authorFirstName } ${ project.authorLastName }`,
+      user: `${ project.authorLastName } ${ project.authorFirstName }`,
       time: admin.firestore.FieldValue.serverTimestamp()
     }
 
@@ -39,7 +39,7 @@ exports.userJoined = functions.region('asia-northeast1').auth
         const newUser = doc.data()
         const notification = {
           content: 'が加入しました!',
-          user: `${newUser.firstName} ${newUser.lastName}`,
+          user: `${newUser.lastName} ${newUser.firstName}`,
           time: admin.firestore.FieldValue.serverTimestamp()
         }
         return createNotification(notification)

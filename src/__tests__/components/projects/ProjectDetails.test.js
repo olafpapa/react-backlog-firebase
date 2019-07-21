@@ -21,7 +21,7 @@ describe('<ProjectDetails />', () => {
     expect(wrapper.find(sel('content')).text()).toEqual('コンテント');
 
     expect(wrapper.find(sel('name')).length).toBe(1);
-    expect(wrapper.find(sel('name')).text()).toEqual('Posted by 太郎 山田');
+    expect(wrapper.find(sel('name')).text()).toEqual('Posted by 山田 太郎');
 
   })
 
