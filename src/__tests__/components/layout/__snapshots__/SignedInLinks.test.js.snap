@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignedInLinks /> <SignedInLinks />のスナップショット 1`] = `
+<ul
+  className="right"
+>
+  <li>
+    <a
+      aria-current={null}
+      href="/create"
+      onClick={[Function]}
+    >
+      New Project
+    </a>
+  </li>
+  <li>
+    <a
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      Log out
+    </a>
+  </li>
+  <li>
+    <a
+      aria-current="page"
+      className="btn btn-floating pink lighten-1 active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      AA
+    </a>
+  </li>
+</ul>
+`;

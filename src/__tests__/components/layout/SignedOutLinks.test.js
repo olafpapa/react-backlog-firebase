@@ -8,12 +8,8 @@ import SignedOutLinks from '../../../components/layout/SignedOutLinks'
 describe('<SignedOutLinks />', () => {
 
   it('子コンポーネントが存在すること', () => {
-    // == 準備 ==
-    /** Appコンポーネントをshallowレンダリング */
     const wrapper = shallow(<SignedOutLinks/>);
-
-    // == 検証 ==
-    /** コンポーネントの数を取得し、2であればOK */
+    // NavLinkコンポーネントの数を取得し、2であればOK
     expect(wrapper.find(NavLink).length).toBe(2);
   });
 
