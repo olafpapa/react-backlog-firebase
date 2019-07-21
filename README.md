@@ -79,6 +79,13 @@ deployするファイルを配置する場所は`public`ではなく`dist`に変
 ```
 その他の設問はお好みで。
 
+### Functions
+Firebase Functionsのコードはfunctionsディレクトリにある。
+```
+cd functions
+npm install
+```
+
 ## ローカルで実行
 ```
 npm install
