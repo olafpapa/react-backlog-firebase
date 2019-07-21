@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && rm -fr ./dist/* && cp -fr ./build/* ./dist/ && firebase deploy",
+    "deploy": "npm run build && mkdir -p dist && rm -fr ./dist/* && cp -fR ./build/* ./dist/ && firebase deploy",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
