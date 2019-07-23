@@ -6,11 +6,11 @@ import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom'
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   render() {
     const { projects, auth, notifications } = this.props
     // ログインしていない場合はログイン画面にリダイレクトする
-    if (!auth.uid) return <Redirect to="/signin"/>
+    if (auth && !auth.uid) return <Redirect to="/signin"/>
 
     return (
       <div className="dashboard container">
