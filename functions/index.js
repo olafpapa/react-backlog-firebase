@@ -28,6 +28,19 @@ exports.projectCreated = functions.region('asia-northeast1').firestore
     return createNotification(notification)
   })
 
+exports.projectDeleted = functions.region('asia-northeast1').firestore
+  .document('projects/{projectId}')
+  .onDelete(doc => {
+    const project = doc.data();
+    const notification = {
+      content: 'がプロジェクトを削除しました!',
+      user: `${ project.authorLastName } ${ project.authorFirstName }`,
+      time: admin.firestore.FieldValue.serverTimestamp()
+    }
+
+    return createNotification(notification)
+  })
+
 exports.userJoined = functions.region('asia-northeast1').auth
   .user()
   .onCreate(user => {
