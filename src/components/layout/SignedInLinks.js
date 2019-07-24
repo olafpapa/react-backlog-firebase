@@ -7,6 +7,7 @@ export const SignedInLinks = (props) => {
   return (
     <ul className="right">
       <li><NavLink to='/create'>New Project</NavLink></li>
+      {/*eslint-disable-next-line*/}
       <li><a onClick={ props.signOut }>Log out</a></li>
       <li><NavLink to='/' className="btn btn-floating pink lighten-1">
         { props.profile.initials }
