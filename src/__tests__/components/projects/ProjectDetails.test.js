@@ -44,7 +44,7 @@ describe('<ProjectDetails />', () => {
   it('DELETEボタン押下', () => {
     // confirmは常にYESをクリック
     global.confirm = () => true
-    wrapper.find(sel('deletebutton')).simulate('click',
+    wrapper.find(sel('delete-button')).simulate('click',
       {
         preventDefault() {
         }
