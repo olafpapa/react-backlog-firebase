@@ -9,6 +9,10 @@ const projectReducer = (state = initState, action) => {
       return state
     case 'CREATE_PROJECT_ERROR':
       return state
+    case 'UPDATE_PROJECT':
+      return state
+    case 'UPDATE_PROJECT_ERROR':
+      return state
     case 'DELETE_PROJECT':
       return state
     case 'DELETE_PROJECT_ERROR':

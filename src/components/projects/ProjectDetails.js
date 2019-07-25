@@ -22,6 +22,11 @@ export const ProjectDetails = (props) => {
     }
   }
 
+  const onClickEdit = (e) => {
+    e.preventDefault()
+    props.history.push(`/edit/${props.match.params.id}`)
+  }
+
   if (project) {
     return (
       <div className="container section project-details">
@@ -33,8 +38,17 @@ export const ProjectDetails = (props) => {
           <div className="card-action gray lighten-4 gray-text">
             <div data-test="name">Posted by { project.authorLastName } { project.authorFirstName }</div>
             <p className="grey-text">{ project.createdAt && moment(project.createdAt.toDate()).calendar() }</p>
-            { auth && project.authorId === auth.uid &&
-            <button data-test="deletebutton" onClick={ onClickDelete } className="btn pink lighten-1 z-depth-0">Delete</button> }
+            {
+              auth && project.authorId === auth.uid &&
+              <>
+                <button data-test="delete-button" onClick={ onClickDelete }
+                        className="btn pink lighten-1 z-depth-0">Delete
+                </button>
+                <button style={ { margin: '0 0 0 10px' } } data-test="update-button" onClick={ onClickEdit }
+                        className="btn pink lighten-1 z-depth-0">Edit
+                </button>
+              </>
+            }
           </div>
         </div>
       </div>
