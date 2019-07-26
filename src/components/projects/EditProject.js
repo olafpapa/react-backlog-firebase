@@ -37,6 +37,7 @@ class EditProject extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.updateProject({id: this.props.match.params.id, ...this.state})
+    this.props.history.push(`/project/${this.props.match.params.id}`)
   }
 
 
