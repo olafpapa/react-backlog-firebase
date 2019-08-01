@@ -19,7 +19,7 @@ describe('<SignIn />', () => {
         preventDefault() {}
       }
     )
-    expect(mockSignIn.mock.calls.length).toBe(1)
+    expect(mockSignIn).toHaveBeenCalledTimes(1)
   });
 
   it('Email入力', () => {

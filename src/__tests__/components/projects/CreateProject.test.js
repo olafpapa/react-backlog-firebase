@@ -22,9 +22,9 @@ describe('<CreateProject />', () => {
       }
     )
     // CREATEボタンが1回押されたか
-    expect(mockCreateProject.mock.calls.length).toBe(1)
+    expect(mockCreateProject).toHaveBeenCalledTimes(1)
     // history.push()がコールされたか
-    expect(mockHistoryPush.mock.calls.length).toBe(1)
+    expect(mockHistoryPush).toHaveBeenCalledTimes(1)
 
   });
 

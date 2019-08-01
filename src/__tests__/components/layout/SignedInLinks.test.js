@@ -21,7 +21,7 @@ describe('<SignedInLinks />', () => {
   it('LOG OUTボタン押下', () => {
     wrapper.find('a').simulate('click')
     // ボタンが1回押されたか
-    expect(mockSignOut.mock.calls.length).toBe(1)
+    expect(mockSignOut).toHaveBeenCalledTimes(1)
   });
 
   it('子コンポーネントが存在すること', () => {

@@ -51,9 +51,9 @@ describe('<ProjectDetails />', () => {
       }
     )
     // DELETEボタンが1回押されたか
-    expect(mockDeleteProject.mock.calls.length).toBe(1)
+    expect(mockDeleteProject).toHaveBeenCalledTimes(1)
     // history.push()がコールされたか
-    expect(mockHistoryPush.mock.calls.length).toBe(1)
+    expect(mockHistoryPush).toHaveBeenCalledTimes(1)
   })
 
 });
