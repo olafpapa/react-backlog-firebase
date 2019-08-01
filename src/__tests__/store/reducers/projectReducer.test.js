@@ -1,14 +1,28 @@
 import projectReducer from '../../../store/reducers/projectReducer'
+import { ActionType } from '../../../store/actions/projectActions'
 
-const initialState = { projects: [] }
-
-const createProjectState = {
-  title: 'テストタイトル',
-  content: 'テストコンテント',
+const initialState = {
+  createError: null,
+  updateError: null,
+  deleteError: null,
 }
 
 const createProjectErrorState = {
-  message: 'エラーが発生しました。'
+  createError: 'エラーが発生しました',
+  updateError: null,
+  deleteError: null,
+}
+
+const updateProjectErrorState = {
+  createError: null,
+  updateError: 'エラーが発生しました',
+  deleteError: null,
+}
+
+const deleteProjectErrorState = {
+  createError: null,
+  updateError: null,
+  deleteError: 'エラーが発生しました',
 }
 
 describe('projectReducer', () => {
@@ -18,10 +32,35 @@ describe('projectReducer', () => {
   });
 
   it('CREATE PROJECT', () => {
-    expect(projectReducer(createProjectState, { type: 'CREATE_PROJECT' })).toEqual(createProjectState);
+    expect(projectReducer(initialState, { type: ActionType.CREATE_PROJECT })).toEqual(initialState);
   });
 
   it('CREATE PROJECT ERROR', () => {
-    expect(projectReducer(createProjectErrorState, { type: 'CREATE_PROJECT_ERROR' })).toEqual(createProjectErrorState);
+    expect(projectReducer(initialState, {
+      type: ActionType.CREATE_PROJECT_ERROR,
+      err: { message: 'エラーが発生しました' }
+    })).toEqual(createProjectErrorState);
+  });
+
+  it('UPDATE PROJECT', () => {
+    expect(projectReducer(initialState, { type: ActionType.UPDATE_PROJECT })).toEqual(initialState);
+  });
+
+  it('UPDATE PROJECT ERROR', () => {
+    expect(projectReducer(initialState, {
+      type: ActionType.UPDATE_PROJECT_ERROR,
+      err: { message: 'エラーが発生しました' }
+    })).toEqual(updateProjectErrorState);
+  });
+
+  it('DELETE PROJECT', () => {
+    expect(projectReducer(initialState, { type: ActionType.DELETE_PROJECT })).toEqual(initialState);
+  });
+
+  it('DELETE PROJECT ERROR', () => {
+    expect(projectReducer(initialState, {
+      type: ActionType.DELETE_PROJECT_ERROR,
+      err: { message: 'エラーが発生しました' }
+    })).toEqual(deleteProjectErrorState);
   });
 });
