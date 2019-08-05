@@ -19,7 +19,9 @@ describe('<SignedInLinks />', () => {
   })
 
   it('LOG OUTボタン押下', () => {
-    wrapper.find('a').simulate('click')
+    wrapper.find('a').simulate('click', {
+      preventDefault() {}
+    })
     // ボタンが1回押されたか
     expect(mockSignOut).toHaveBeenCalledTimes(1)
   });
