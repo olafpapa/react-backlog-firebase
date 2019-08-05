@@ -15,19 +15,7 @@ exports[`<SignedInLinks /> <SignedInLinks />のスナップショット 1`] = `
   </li>
   <li>
     <a
-      onClick={
-        [MockFunction] {
-          "calls": Array [
-            Array [],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-          ],
-        }
-      }
+      onClick={[Function]}
     >
       Log out
     </a>

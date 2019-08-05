@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react'
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
